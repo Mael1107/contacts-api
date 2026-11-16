@@ -1,6 +1,6 @@
 class Api::V1::ContactsController < ApplicationController
     def index
-        contacts = Contact.order(:name)
+        contacts = Contact.order(favorite: :desc, name: :asc)
         render json: contacts
     end
 
